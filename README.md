@@ -1,3 +1,4 @@
+
 # React Component Library
 
 ## Overview
@@ -14,26 +15,24 @@ This document provides instructions to set up and run the React Component Librar
 
 First, clone the repository to your local machine:
 
-```bash
 git clone https://github.com/LeopoldXing/assignment12-web-component-library
 cd kaur_ravneet_ui_garden
-```
+
 
 ### Building the Docker Image
 
 To build the Docker image for the application, run the following command in the root directory of the project:
 
-```bash
+
 docker build -t kaur_ravneet_coding_assignment_12 .
-```
+
 
 ### Running the Docker Container
 
 Once the image is built, you can run the container using:
 
-```bash
+
 docker run -dp 8083:8083 --name kaur_ravneet_coding_assignment_12 kaur_ravneet_coding_assignment_12
-```
 
 ### Accessing the Component Library
 
