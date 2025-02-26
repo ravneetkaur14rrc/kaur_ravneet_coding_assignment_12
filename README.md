@@ -15,7 +15,7 @@ This document provides instructions to set up and run the React Component Librar
 
 First, clone the repository to your local machine:
 
-git clone https://github.com/LeopoldXing/assignment12-web-component-library
+git clone https://github.com/ravneetkaur14rrc/kaur_ravneet_ui_garden
 cd kaur_ravneet_ui_garden
 
 
