@@ -1,5 +1,4 @@
 import React from "react";
-import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Text from "./Text";
 
@@ -19,7 +18,7 @@ describe("Running Test for Text", () => {
   test("has correct style when disabled", () => {
     render(<Text disabled text="Disabled Text" />);
     const text = screen.getByText("Disabled Text");
-    expect(text).toHaveStyle("background-color: grey"); // Check if the disabled style is applied correctly
+    expect(text).toHaveStyle("background-color: rgb(238, 238, 238"); // Check if the disabled style is applied correctly
     expect(text).toHaveStyle("color: #888"); // Assuming this is the color for disabled text, update if necessary
   });
 

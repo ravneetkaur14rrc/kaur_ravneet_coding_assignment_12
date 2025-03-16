@@ -2,24 +2,31 @@
 FROM node:22-alpine
 
 # Set the working directory in the container
-RUN mkdir kaur_ravneet_ui_garden
-WORKDIR /kaur_ravneet_ui_garden
+WORKDIR /kaur_ravneet_ui_garden_build_checks
 
-# Copy the package.json file and package-lock.json file
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of source files
+# Install Husky to enable Git hooks
+RUN npx husky install
+
+# Copy the rest of the source files
 COPY . .
 
+# Run pre-commit checks
+RUN npm run lint
+RUN npm run test
+RUN npm run format
 
-# npm install Install
+# Build the React component library
 RUN npm run build
 
-ENV PORT=8083
-EXPOSE 8083
+# Set the environment variable
+ENV PORT=8018
+EXPOSE 8018
 
-# The default command to run when starting the container
+# Default command to run when starting the container
 CMD ["npm", "run", "storybook"]

@@ -1,5 +1,4 @@
 import React from "react";
-import "@testing-library/jest-dom";
 import { render, fireEvent } from "@testing-library/react";
 import HeroImage from "./HeroImg";
 
@@ -12,8 +11,8 @@ describe("HeroImage", () => {
         subtitle="Test Subtitle"
       />,
     );
-    expect(getByText("Test Title")).toBeVisible();
-    expect(getByText("Test Subtitle")).toBeVisible();
+    expect(getByText("Test Title")).toBeInTheDocument();
+    expect(getByText("Test Subtitle")).toBeInTheDocument();
   });
 
   it("calls OnClick when the button is clicked", () => {

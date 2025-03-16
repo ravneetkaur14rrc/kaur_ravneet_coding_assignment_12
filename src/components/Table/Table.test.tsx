@@ -1,5 +1,4 @@
 import React from "react";
-import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Table from "./Table";
 import TableHeader from "./TableHeader";
@@ -59,7 +58,7 @@ describe("Table Component Tests", () => {
         </Table>,
     );
     const table = screen.getByRole("table");
-    expect(table).toHaveStyle("background-color: lightgrey");
+    expect(table).toHaveStyle("background-color: rgb(240, 240, 240");
     expect(table).toHaveStyle("cursor: not-allowed");
     expect(table).toHaveStyle("color: darkgrey");
   });

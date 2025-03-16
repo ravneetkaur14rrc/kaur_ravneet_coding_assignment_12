@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from "@storybook/react";
 import Text from "./Text";
 import { type IText } from "./Text.types";
-import { type ILabel } from "../Label/Label.types";
 
 const meta: Meta = {
   title: "Components Assignment/Text",

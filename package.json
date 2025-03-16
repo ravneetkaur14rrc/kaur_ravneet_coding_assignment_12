@@ -24,14 +24,15 @@
   },
   "scripts": {
     "rollup": "rollup -c",
-    "start": "react-scripts start",
+    "start": "set PORT=8083 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
-
+    "prepare": "husky install",
+    "precommit": "lint-staged",
+    "lint": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +56,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@chromatic-com/storybook": "^3.2.5",
+    "@eslint/js": "^9.22.0",
     "@storybook/addon-docs": "^8.6.0",
     "@storybook/addon-essentials": "^8.6.0",
     "@storybook/addon-interactions": "^8.6.0",
@@ -66,11 +68,22 @@
     "@storybook/react": "^8.6.0",
     "@storybook/react-webpack5": "^8.6.0",
     "@storybook/test": "^8.6.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-storybook": "^0.11.3",
+    "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "prop-types": "^15.8.1",
     "storybook": "^8.6.0",
+    "typescript-eslint": "^8.26.1",
     "webpack": "^5.95.0"
+  },
+  "lint-staged": {
+    "*.js,*.jsx,*.ts,*.tsx": [
+      "eslint --fix",
+      "prettier --write",
+      "npm test -- --findRelatedTests"
+    ]
   }
 }
